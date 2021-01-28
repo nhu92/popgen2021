@@ -48,7 +48,7 @@ Now, create a text file and type below commands into. Then, submit it.
 
 vcftools --vcf <vcf file> --hardy --out <output file name>
 ```
-The result of this will contains the Observed numbers of Homozygotes and Heterozygotes and the corresponding Expected numbers under HWE.
+The result of this will reports a p-value for each site from a Hardy-Weinberg Equilibrium test (as defined by Wigginton, Cutler and Abecasis (2005)). It will also contain the Observed numbers of Homozygotes and Heterozygotes and the corresponding Expected numbers under HWE.
 
 Alternatively, you can use 'angsd' to calculate the HWE, too. Submission scripts of angsd are:
 ```bash
