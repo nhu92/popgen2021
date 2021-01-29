@@ -29,10 +29,10 @@ vcftools --help
 ```
 If this command gives you correct information, it means you successfully created software environment for this practice.
 
-Another software which is quite often used in population genetics is called 'angsd'. It is not available to install through conda yet (I am not sure. If I am wrong please tell me). The installation notes are [here](https://github.com/ANGSD/angsd/blob/master/README.md)
+Another software which is quite often used in population genetics is called 'angsd'. It is not available to install through conda yet (I am not sure. If I am wrong please tell me). The installation notes are [here](https://github.com/ANGSD/angsd/blob/master/README.md).
 
 ## Calculating HWE and do Fisher's Exact Test
-The datasets we use for calculating HWE are from three species: *Salix phlebophylla*, *Salix nivalis*, and *Salix reticulata*. We prepared the data through initial read alignment, genotyping and hard filtering. So far, these data are prepared for Thus, the data is ready for most population genetics analysis.
+The datasets we use for calculating HWE are from three species: *Salix phlebophylla*, *Salix nivalis*, and *Salix reticulata*. We prepared the data through initial read alignment, genotyping and hard filtering. So far, these data are prepared for this practice but might not be approporate for later analysis. There would be more filtering processes applied to these data in the future.
 
 Current data file for three species are stored in HPCC directory: ```/lustre/scratch/nhu/popgen2021/raw/```. (It is not there right now but I promise I will finish prepare those and get it available before midnight of Jan. 29, 2021 - Nan). You can copy them to your own working directory for easier access.
 
