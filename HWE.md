@@ -34,9 +34,10 @@ Another software which is quite often used in population genetics is called 'ang
 ## Calculating HWE and do Fisher's Exact Test
 The datasets we use for calculating HWE are from three species: *Salix phlebophylla*, *Salix nivalis*, and *Salix reticulata*. We prepared the data through initial read alignment, genotyping and hard filtering. So far, these data are prepared for this practice but might not be approporate for later analysis. There would be more filtering processes applied to these data in the future.
 
-Current data file for three species are stored in HPCC directory: ```/lustre/scratch/nhu/popgen2021/raw/```. (It is not there right now but I promise I will finish prepare those and get it available before midnight of Jan. 29, 2021 - Nan). You can copy them to your own working directory for easier access.
+Current data file for three species are stored in HPCC directory: ```/lustre/scratch/nhu/popgen2021/raw/```. (*It is not there right now but I promise I will finish prepare those and get it available before midnight of Jan. 29, 2021 - Nan*)(It is done now! - Nan). You can copy them to your own working directory for easier access.
 
 Now, create a text file and type below commands into. Then, submit it.
+> For beginners, use `nano HWE_vcftools.sh` to create a job submission script and copy following scripts block to it. After edit it, hit Ctrl+X and Enter to save the file.
 ```bash
 #!/bin/bash
 #SBATCH -J HWEcalc
@@ -44,10 +45,12 @@ Now, create a text file and type below commands into. Then, submit it.
 #SBATCH –e %x.e%j
 #SBATCH -p nocona
 #SBATCH -N 1
-#SBATCH -n 128
+#SBATCH -n 32
 
 vcftools --vcf <vcf file> --hardy --out <output file name>
 ```
+> HPCC uses new job submission system this year. You should use `sbatch HWE_vcftools.sh` to submit it. Use `squeue --me` or `squeue -u <your eraider>` to check job status. Use `scancel <job ID>` to cancel failed jobs.
+
 The result of this will reports a p-value for each site from a Hardy-Weinberg Equilibrium test (as defined by Wigginton, Cutler and Abecasis (2005)). It will also contain the Observed numbers of Homozygotes and Heterozygotes and the corresponding Expected numbers under HWE.
 
 Alternatively, you can use 'angsd' to calculate the HWE, too. Submission scripts of angsd are:
@@ -58,7 +61,7 @@ Alternatively, you can use 'angsd' to calculate the HWE, too. Submission scripts
 #SBATCH –e %x.e%j
 #SBATCH -p nocona
 #SBATCH -N 1
-#SBATCH -n 128
+#SBATCH -n 32
 
 angsd -vcf-gl <vcf file> -doHWE 1
 ```
