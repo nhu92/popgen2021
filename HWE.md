@@ -10,7 +10,7 @@ Nan Hu / Jan 24, 2020
 5. Result display and interpretation 
 ---
 
-## Environment preparation
+## Environment Setup
 Before starting working on course project. We need to get familiar with working with super computer clusters and Linux environment. TTU has provided HPCC (High Performance Computer Center) services. In order to get access to HPCC resources, we need to [apply](https://www.depts.ttu.edu/hpcc/accounts/studentrequest.php) for an account for research use. 
 
 Software for this class mostly run under Linux operating system, which is the OS of HPC. On the website of HPCC, you could find some tutorials of using HPC and basics of Linux. They also offers regular [training](https://www.depts.ttu.edu/hpcc/about/training.php) on these topics. There are previous training records to help you quickly get into  bioinformatics fields.
