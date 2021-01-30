@@ -31,6 +31,33 @@ If this command gives you correct information, it means you successfully created
 
 Another software which is quite often used in population genetics is called 'angsd'. It is not available to install through conda yet (I am not sure. If I am wrong please tell me). The installation notes are [here](https://github.com/ANGSD/angsd/blob/master/README.md).
 
+> Some of you having trouble in installing 'angsd' on HPCC. The author of the software offers the local installation processes which will install both htslib and angsd. However, if you still stuck in install the package. Here are some steps I take to install it and it works. 
+```bash
+# git clone 'angsd' software package from github:
+git clone https://github.com/angsd/angsd.git
+
+# download newest htslib:
+wget https://github.com/samtools/htslib/releases/download/1.11/htslib-1.11.tar.bz2
+
+# decompress it
+tar -xf htslib-1.11.tar.bz2
+
+# load gcc compiler on HPCC
+module load gcc/10.1.0
+
+# install htslib manually
+cd htslib-1.11
+./configure
+make
+
+# back to angsd directory and install angsd
+cd ../angsd
+make HTSSRC=../htslib-1.11
+
+# test if it works
+angsd --help
+```
+
 ## Calculating HWE and do Fisher's Exact Test
 The datasets we use for calculating HWE are from three species: *Salix phlebophylla*, *Salix nivalis*, and *Salix reticulata*. We prepared the data through initial read alignment, genotyping and hard filtering. So far, these data are prepared for this practice but might not be approporate for later analysis. There would be more filtering processes applied to these data in the future.
 
