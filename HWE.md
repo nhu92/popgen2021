@@ -106,5 +106,19 @@ HPCC officially suggests us to use Globus to transferring data. Here is a tutori
 https://www.depts.ttu.edu/hpcc/userguides/general_guides/file_transfer.php
 
 ### Transferring with file transferring software
+A lot of software support data transferring across remote computer and local computer. I use [xftp]:https://www.netsarang.com/en/xftp/ and it is free for researchers. You can find any software having this function to use.
 
+### Transferring with 'scp' command (not recommended)
+There is a simple way to download data from HPCC to local computer. On windows system, type 'cmd' on search box to call the command line. On Mac, use terminal window. We can use following command to copy data from remote computer:
+```bash
+scp <eraider>@login.hpcc.ttu.edu:<Remote file> <local directory>
+```
+Here is an example:
+```bash
+scp nhu@login.hpcc.ttu.edu:/home/nhu/snivalis.HWE .
+cwd
+```
+And it will ask you about your eraider password. The file will download to your current directory on you local computer. 'cwd' command is to see the current working directory.
+
+This way to transferring data is quick but not recommended by HPCC since when it transferring large data, it is not quite reliable and might cause issues on login node of HPCC.
 
