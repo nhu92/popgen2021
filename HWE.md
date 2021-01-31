@@ -7,7 +7,7 @@ Nan Hu / Jan 24, 2020
 2. Building up software environment
 3. Getting familiar to VCF file format
 4. Using vcftools and/or angsd to calculate HWE
-5. Result display and interpretation 
+5. Result visulization and interpretation 
 ---
 
 ## Environment Setup
