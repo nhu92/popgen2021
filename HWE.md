@@ -108,6 +108,8 @@ https://www.depts.ttu.edu/hpcc/userguides/general_guides/file_transfer.php
 ### Transferring with file transferring software
 A lot of software support data transferring across remote computer and local computer. I use [xftp](https://www.netsarang.com/en/xftp/) and it is free for researchers. You can find any software having this function to use.
 
+Some of you suggest [filezilla](https://filezilla-project.org/). It looks the similar thing like xftp.
+
 ### Transferring with 'scp' command (not recommended)
 There is a simple way to download data from HPCC to local computer. On windows system, type 'cmd' on search box to call the command line. On Mac, use terminal window. We can use following command to copy data from remote computer:
 ```bash
