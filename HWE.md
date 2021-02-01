@@ -69,7 +69,7 @@ Now, create a text file and type below commands into. Then, submit it.
 #!/bin/bash
 #SBATCH -J HWEcalc
 #SBATCH -o %x.o%j
-#SBATCH –e %x.e%j
+#SBATCH -e %x.e%j
 #SBATCH -p nocona
 #SBATCH -N 1
 #SBATCH -n 32
