@@ -9,6 +9,8 @@ Nan Hu / Jan 24, 2020
 4. Using vcftools and/or angsd to calculate HWE
 5. Result visulization and interpretation 
 ---
+## Reads mapping and SNP calling
+See [Popgen Data Prep1](https://github.com/gudusanjiao/popgen2021/blob/main/Population%20Genetics%20Data%20Analysis%201.pptx).
 
 ## Environment Setup
 Before starting working on course project. We need to get familiar with working with super computer clusters and Linux environment. TTU has provided HPCC (High Performance Computer Center) services. In order to get access to HPCC resources, we need to [apply](https://www.depts.ttu.edu/hpcc/accounts/studentrequest.php) for an account for research use. 
