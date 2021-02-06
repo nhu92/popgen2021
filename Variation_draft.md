@@ -10,7 +10,7 @@ This document provides some methods to calculate variation parameters in real po
 ---
 ## Aims:
 1. using vcftools to calculate per site pairwise differences (π) and windowed π
-2. using angsd to calculate per site π and windowed π
+2. using angsd to calculate other θ estimators
 3. using angsd to generate site frequency spectrum (SFS)
 4. plotting results
 ---
