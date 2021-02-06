@@ -50,8 +50,70 @@ Output file has the suffix of `.windowed.pi`. It is also a tablized text file wi
 
 Notice here, the 'N_VARIANTS' column is the number of segregating sites in this window. It looks like θw·a - part of the estimator of diversity. However, it is not. The reason is that our data set is from sequence capture array. We only sampled genome regions that we have probes on. Thus, there will be some region contain SNPs but we just do not have reads covered on. Then, the number of segregating sites in this table is not the real segregating site number for each window. If your data is generated through whole genome resequencing and you have got a decent reference genome, then the 'N_VARIANTS' column might be perfect to calculate θw (by divided by a = 1/1 + 1/2 + 1/3 + ... + 1/Ne; assuming no ascertainment bias).
 
-## Calculating diversity estimators using 'angsd'
-> angsd requires `.bam` files at this stage. I am going back to generate these files. It might takes one extra day.
+## Generate SFS and calculating diversity estimators using 'angsd'
+> angsd requires `.bam` files at this stage. I am going back to generate these files. It might takes one extra day. (still waiting the BAM files, should be done in the evening of Saturday, Feb. 6, 2021 - Nan)
+
+'angsd' takes `.bam` files to calculate site frequency spectrum (SFS) first. From the result of SFS (an `.idx` file), it estimate several estimators of diversity (θ). Since it takes `.bam` files, it may run longer than vcftools does.
+> This step requires the latest version of 'angsd'. I already installed under our course directory `/lustre/scratch/nhu/popgen2021/software/latest/angsd/`. You can directly use it without installing your own.
+```bash
+#!/bin/bash
+#SBATCH -J windowpi_vts
+#SBATCH -o %x.o%j
+#SBATCH -e %x.e%j
+#SBATCH -p nocona
+#SBATCH -N 1
+#SBATCH -n 128
+
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/angsd -bam <bam.filelist> -doSaf 1 -anc <reference genome> -GL 1 -P 128 -out <output file name>
+```
+This command generate an `.idx` file record genotype likelihood and estimate of per site statistics of diversity. It is an intermediate file we will use for following analysis.
+
+'angsd' contains a powerful package 'realSFS' to use `.idx` file to generate folded SFS and unfolded SFS:
+```bash
+#!/bin/bash
+#SBATCH -J windowpi_vts
+#SBATCH -o %x.o%j
+#SBATCH -e %x.e%j
+#SBATCH -p nocona
+#SBATCH -N 1
+#SBATCH -n 32
+
+# folded SFS
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS [.idx file] -P 32 -fold 1 > [output file, .sfs]
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS saf2theta [.idx file] -outname [output file name] -sfs [.sfs file] -fold 1
+
+# unfolded SFS
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS [.idx file] -P 32 > [output file, .sfs]
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS saf2theta [.idx file] -outname [output file name] -sfs [.sfs file]
+```
+Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another package 'thetaStat' to extract diversity estimation from SFS:
+```bash
+#!/bin/bash
+#SBATCH -J windowpi_vts
+#SBATCH -o %x.o%j
+#SBATCH -e %x.e%j
+#SBATCH -p nocona
+#SBATCH -N 1
+#SBATCH -n 32
+
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS/misc/thetaStat do_stat <.thetas.idx file>
+```
+'angsd' can also do sliding window estimation in diversity values. Here we still use 25k as the window size as an example. Steps are equal to window size to make un-overlapping windows.
+```bash
+#!/bin/bash
+#SBATCH -J windowpi_vts
+#SBATCH -o %x.o%j
+#SBATCH -e %x.e%j
+#SBATCH -p nocona
+#SBATCH -N 1
+#SBATCH -n 32
+
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS/misc/thetaStat do_stat <.thetas.idx file> -win 25000 -step 25000 -outnames <output file name>
+```
+
+## plotting θπ, θw, SFS, and other estimators
+> waiting on data to test right now, will be R codes here
+
 
 
 
