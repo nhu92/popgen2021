@@ -51,6 +51,9 @@ Output file has the suffix of `.windowed.pi`. It is also a tablized text file wi
 Notice here, the 'N_VARIANTS' column is the number of segregating sites in this window. It looks like θw·a - part of the estimator of diversity. However, it is not. The reason is that our data set is from sequence capture array. We only sampled genome regions that we have probes on. Thus, there will be some region contain SNPs but we just do not have reads covered on. Then, the number of segregating sites in this table is not the real segregating site number for each window. If your data is generated through whole genome resequencing and you have got a decent reference genome, then the 'N_VARIANTS' column might be perfect to calculate θw (by divided by a = 1/1 + 1/2 + 1/3 + ... + 1/Ne; assuming no ascertainment bias).
 
 ## Calculating diversity estimators using 'angsd'
+> angsd requires `.bam` files at this stage. I am going back to generate these files. It might takes one extra day.
+
+
 
 
 
