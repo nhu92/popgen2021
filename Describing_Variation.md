@@ -58,7 +58,7 @@ Notice here, the 'N_VARIANTS' column is the number of segregating sites in this 
 > bam file list are stored in `/lustre/scratch/nhu/popgen2021/scripts/diversity/`. There are `snivalis.bamlist`, `sreticulata.bamlist`, and `sphlebophylla.bamlist`. Choose the one that assigned to your group as the first input file for command below.
 ```bash
 #!/bin/bash
-#SBATCH -J windowpi_vts
+#SBATCH -J idx_angsd
 #SBATCH -o %x.o%j
 #SBATCH -e %x.e%j
 #SBATCH -p nocona
@@ -72,7 +72,7 @@ This command generate an `.idx` file record genotype likelihood and estimate of 
 'angsd' contains a powerful package 'realSFS' to use `.idx` file to generate folded SFS and unfolded SFS:
 ```bash
 #!/bin/bash
-#SBATCH -J windowpi_vts
+#SBATCH -J realsfs_angsd
 #SBATCH -o %x.o%j
 #SBATCH -e %x.e%j
 #SBATCH -p nocona
@@ -90,7 +90,7 @@ This command generate an `.idx` file record genotype likelihood and estimate of 
 Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another package 'thetaStat' to extract diversity estimation from SFS:
 ```bash
 #!/bin/bash
-#SBATCH -J windowpi_vts
+#SBATCH -J theta_angsd
 #SBATCH -o %x.o%j
 #SBATCH -e %x.e%j
 #SBATCH -p nocona
@@ -102,7 +102,7 @@ Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another pa
 'angsd' can also do sliding window estimation in diversity values. Here we still use 25k as the window size as an example. Steps are equal to window size to make un-overlapping windows.
 ```bash
 #!/bin/bash
-#SBATCH -J windowpi_vts
+#SBATCH -J windowtheta_angsd
 #SBATCH -o %x.o%j
 #SBATCH -e %x.e%j
 #SBATCH -p nocona
