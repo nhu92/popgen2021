@@ -77,7 +77,7 @@ This command generate an `.idx` file record genotype likelihood and estimate of 
 #SBATCH -e %x.e%j
 #SBATCH -p nocona
 #SBATCH -N 1
-#SBATCH -n 32
+#SBATCH -n 64
 
 # folded SFS
 /lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS [.idx file] -P 32 -fold 1 > [output file, .sfs]
@@ -107,7 +107,7 @@ Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another pa
 #SBATCH -e %x.e%j
 #SBATCH -p nocona
 #SBATCH -N 1
-#SBATCH -n 32
+#SBATCH -n 64
 
 /lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS/misc/thetaStat do_stat <.thetas.idx file> -win 25000 -step 25000 -outnames <output file name>
 ```
