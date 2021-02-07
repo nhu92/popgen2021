@@ -114,7 +114,7 @@ Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another pa
 ```
 
 ## plotting θπ, θw, SFS, and other estimators
-> waiting on data to test right now, will be R codes here
+See [Plotting Diversity](https://github.com/gudusanjiao/popgen2021/blob/main/plotting_diversity.R)
 
 
 
