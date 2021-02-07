@@ -80,11 +80,11 @@ This command generate an `.idx` file record genotype likelihood and estimate of 
 #SBATCH -n 64
 
 # folded SFS
-/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS [.idx file] -P 32 -fold 1 > [output file, .sfs]
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS [.idx file] -P 64 -fold 1 > [output file, .sfs]
 /lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS saf2theta [.idx file] -outname [output file name] -sfs [.sfs file] -fold 1
 
 # unfolded SFS
-/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS [.idx file] -P 32 > [output file, .sfs]
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS [.idx file] -P 64 > [output file, .sfs]
 /lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS saf2theta [.idx file] -outname [output file name] -sfs [.sfs file]
 ```
 Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another package 'thetaStat' to extract diversity estimation from SFS:
@@ -95,7 +95,7 @@ Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another pa
 #SBATCH -e %x.e%j
 #SBATCH -p nocona
 #SBATCH -N 1
-#SBATCH -n 32
+#SBATCH -n 64
 
 /lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS/misc/thetaStat do_stat <.thetas.idx file>
 ```
