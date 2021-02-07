@@ -97,7 +97,7 @@ Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another pa
 #SBATCH -N 1
 #SBATCH -n 64
 
-/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS/misc/thetaStat do_stat <.thetas.idx file>
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/thetaStat do_stat <.thetas.idx file>
 ```
 'angsd' can also do sliding window estimation in diversity values. Here we still use 25k as the window size as an example. Steps are equal to window size to make un-overlapping windows.
 ```bash
@@ -109,7 +109,7 @@ Output will be a file with suffix of `.thetas.idx`. Then, 'angsd' has another pa
 #SBATCH -N 1
 #SBATCH -n 64
 
-/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/realSFS/misc/thetaStat do_stat <.thetas.idx file> -win 25000 -step 25000 -outnames <output file name>
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/misc/thetaStat do_stat <.thetas.idx file> -win 25000 -step 25000 -outnames <output file name>
 ```
 
 ## plotting θπ, θw, SFS, and other estimators
