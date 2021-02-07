@@ -56,6 +56,7 @@ Notice here, the 'N_VARIANTS' column is the number of segregating sites in this 
 'angsd' takes `.bam` files to calculate site frequency spectrum (SFS) first. From the result of SFS (an `.idx` file), it estimate several estimators of diversity (θ). Since it takes `.bam` files, it may run longer than vcftools does, but normally less than 1 hour.
 > This step requires the latest version of 'angsd'. I already installed under our course directory `/lustre/scratch/nhu/popgen2021/software/latest/angsd/`. You can directly use it without installing your own.
 > bam file list are stored in `/lustre/scratch/nhu/popgen2021/scripts/diversity/`. There are `snivalis.bamlist`, `sreticulata.bamlist`, and `sphlebophylla.bamlist`. Choose the one that assigned to your group as the first input file for command below.
+> We did a simple filter here to screen genotypes with minimum mapping quality and Phred quality. For vcftools we use `.vcf` file, they are already filtered so we do not need to do this.
 ```bash
 #!/bin/bash
 #SBATCH -J idx_angsd
@@ -65,7 +66,7 @@ Notice here, the 'N_VARIANTS' column is the number of segregating sites in this 
 #SBATCH -N 1
 #SBATCH -n 128
 
-/lustre/scratch/nhu/popgen2021/software/latest/angsd/angsd -bam <bam.filelist> -doSaf 1 -anc <reference genome> -GL 1 -P 128 -out <output file name>
+/lustre/scratch/nhu/popgen2021/software/latest/angsd/angsd -bam <bam.filelist> -doSaf 1 -anc <reference genome> -GL 1 -P 128 -minMapQ 30 -minQ 20 -out <output file name>
 ```
 This command generate an `.idx` file record genotype likelihood and estimate of per site statistics of diversity. It is an intermediate file we will use for following analysis.
 
