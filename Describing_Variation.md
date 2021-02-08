@@ -72,7 +72,7 @@ Notice here, the 'N_VARIANTS' column is the number of segregating sites in this 
 ```
 This command generate an `.idx` file record genotype likelihood and estimate of per site statistics of diversity. It is an intermediate file we will use for following analysis.
 
-'angsd' contains a powerful package 'realSFS' to use `.idx` file to generate folded SFS and unfolded SFS. We suggest to generate folded SFS here because our reference is not the ancient states but share the same common ancestor.
+'angsd' contains a powerful package 'realSFS' to use `.idx` file to generate folded SFS and unfolded SFS. We suggest to generate folded SFS here because our reference is not the ancestor states. In practical researches, if your study system has an ancestor references, you could generate an unfolded SFS. An unfolded SFS will give us more information like estimation of diversity from derived alleles.
 ```bash
 #!/bin/bash
 #SBATCH -J realsfs_angsd
