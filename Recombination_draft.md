@@ -7,7 +7,16 @@ Nan Hu / Feb. 7, 2021
 
 ---
 ## Aims:
-1. using vcftools to calculate r^2 statistics of specific region
-2. plot r^2 metrics
+1. Introducing males and females in datasets
+2. Using vcftools to calculate r<sup>2</sup> statistics for specific region
+3. Using ngsLD to calculate LD decay for specific region
+4. Plotting r<sup>2</sup> metrics, LD decay curve
 ---
-## Calculating r^2 using 'vcftools'
+## Introducing males and females in datasets
+### Dioecy in *Salicaceae*
+
+
+### How to do analysis based on part of our data
+
+
+## Calculating r<sup>2</sup> using 'vcftools'
