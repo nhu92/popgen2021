@@ -41,6 +41,7 @@ vcftools --vcf snivalis.vcf --remove nogender.list --recode --out snivalis.clean
 ## nogender.list is also a pre-made text file with all the names that do not have a gender identification.
 ```
 
+For this exercise and later ones in this semester, we will use these command very often. For more usages and more fancy filters, you could visit [VCF manual](http://vcftools.sourceforge.net/man_latest.html).
 ## Calculating r<sup>2</sup> using 'vcftools'
 
 
