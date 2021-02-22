@@ -22,8 +22,19 @@ Knowing the gender of our data could bring some special perspectives in analyzin
 In practical research, we often want to subset our data to compare or study the part we are interested. In vcftools, it is very convenient to subset our data by using `--positions`, `--from-bp`, `--to-bp`, `-chr`, `--keep`, `--remove`, `--recode` parameters.
 ```bash
 # Here are some examples for using vcftools to subset our data:
-## 
-vcftools --vcf 
+## calculate site pi for Chr05
+vcftools --vcf snivalis.vcf --site-pi --chr Chr05 --out snivalis
+
+## calculate windowed pi for Chr07 from 4Mbp to 7Mbp, window size is 50k
+vcftools --vcf snivalis.vcf --window-pi 50000 --chr Chr07 --from-bp 4000000 --to-bp 7000000 --out snivalis
+
+## subset vcf files to include only Chr15W
+vcftools --vcf snivalis.vcf --chr Chr15W --recode --out snivalis
+## the output will be snivalis.recode.vcf, which only has Chr15W.
+
+## calculating hwe statistics only for males
+
+
 ```
 
 ## Calculating r<sup>2</sup> using 'vcftools'
