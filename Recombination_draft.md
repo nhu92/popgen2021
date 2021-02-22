@@ -29,12 +29,16 @@ vcftools --vcf snivalis.vcf --site-pi --chr Chr05 --out snivalis
 vcftools --vcf snivalis.vcf --window-pi 50000 --chr Chr07 --from-bp 4000000 --to-bp 7000000 --out snivalis
 
 ## subset vcf files to include only Chr15W
-vcftools --vcf snivalis.vcf --chr Chr15W --recode --out snivalis
-## the output will be snivalis.recode.vcf, which only has Chr15W.
+vcftools --vcf snivalis.vcf --chr Chr15W --recode --out snivalis.Chr15W
+## the output will be snivalis.Chr15W.recode.vcf, which only has Chr15W.
 
-## calculating hwe statistics only for males
+## calculating hwe statistics only for Chr15W in males
+vcftools --vcf snivalis.vcf --chr Chr15W --keep male.list --hardy --out snivalis
+## male.list file is a pre-made text file. It contains all the males' names with each name in a line.
 
-
+## subset vcf files that only include individuals with clear gender identifications
+vcftools --vcf snivalis.vcf --remove nogender.list --recode --out snivalis.clean
+## nogender.list is also a pre-made text file with all the names that do not have a gender identification.
 ```
 
 ## Calculating r<sup>2</sup> using 'vcftools'
