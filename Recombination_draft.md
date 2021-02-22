@@ -44,7 +44,46 @@ vcftools --vcf snivalis.vcf --remove nogender.list --recode --out snivalis.clean
 For this exercise and later ones in this semester, we will use these command very often. For more usages and more fancy filters, you could visit [VCF manual](http://vcftools.sourceforge.net/man_latest.html).
 ## Calculating r<sup>2</sup> using 'vcftools'
 In vcftools, we have `--geno-r2`, `--hap-r2`, `--geno-r2-positions`, `--hap-r2-positions` options to calculate r<sup>2</sup> in different situations. If our data are phased (means we know which alleles are in the same haplotype), we can calculate haplotype r<sup>2</sup>. For our data, since we sequenced with sequence capture technique, the genotype calling is less phased. Currently, we could only use `--geno-r2` or `--geno-r2-positions` to calculate r<sup>2</sup>.
+> To reduce the work intensity, I suggest only work on part of the genome when generating LD parameters. As an example here, I choose to run r<sup>2</sup> calculation only for Chr15W in males, which is a ZZ homozygotic sex chromosome pair. I cut the chromosome into 3 parts: PAR1 (Psuedo-autosomal Region 1) from 0 to 4Mbp, SDR (Sex determination Region) from 4 to 8Mbp, and PAR2 (Psuedo-autosomal Region 2) from 8Mbp to the end. It will take a very long computer time to working on full chromosomes.
+> Files `sn_male.list`, `sn_female.list`, `sp_male.list`, `sp_female.list`, `sr_male.list`, `sr_female.list` are available under `/lustre/scratch/nhu/popgen2021/doc/`. They contains the name list of individuals for each gender in each populations.
+```bash
+#!/bin/bash
+#SBATCH -J subset
+#SBATCH -o %x.o%j
+#SBATCH -e %x.e%j
+#SBATCH -p nocona
+#SBATCH -N 1
+#SBATCH -n 16
 
+vcftools --vcf ../../raw/snivalis.vcf --keep male.list --chr Chr15W --from-bp 4000000 --to-bp 8000000 --recode --out snivalis.male.chr15.sdr
+vcftools --vcf ../../raw/snivalis.vcf --keep male.list --chr Chr15W --from-bp 1 --to-bp 4000000 --recode --out snivalis.male.chr15.par1
+vcftools --vcf ../../raw/snivalis.vcf --keep male.list --chr Chr15W --from-bp 8000000 --to-bp 15651726 --recode --out snivalis.male.chr15.par2
+```
+The reason we generate subsets of our VCF files is that we will use these files multiple times.
+
+```bash
+#!/bin/bash
+#SBATCH -J genor2
+#SBATCH -o %x.o%j
+#SBATCH -e %x.e%j
+#SBATCH -p nocona
+#SBATCH -N 1
+#SBATCH -n 128
+
+vcftools --vcf snivalis.male.chr15.sdr.recode.vcf --geno-r2 --out snivalis.male.chr15.sdr
+vcftools --vcf snivalis.male.chr15.par1.recode.vcf --geno-r2 --out snivalis.male.chr15.par1
+vcftools --vcf snivalis.male.chr15.par2.recode.vcf --geno-r2 --out snivalis.male.chr15.par2
+```
+These files could be very large. You could download them back to your computer for plotting. Also, you can run R on HPCC by loading R modules:
+```bash
+module load gcc/10.1.0
+module load r/4.0.2
+
+R
+```
+Then you will enter a R session to type or copy your code.
+
+The code for generating plot for r<sup>2</sup> is here.
 
 ## Calculate LD decay using 'ngsLD'
 
