@@ -53,19 +53,19 @@ ld <- rinitial
 g <-plotPairwiseLD(ld)
 
 # #you could change the dimension of the plot
-ggsave(filename ="R2plot_sdr.png", plot = g, height=45, width= 45)
+ggsave(filename ="R2plot_sdr.png", plot = g, height = 45, width = 45)
 
 # PAR1 plot
 rinitial <- read.delim("snivalis.male.chr15.par1.geno.ld")
 colnames(rinitial)=c("chr","POS_A","POS_B","N_INDV","R2")
 ld <- rinitial
 g <-plotPairwiseLD(ld)
-ggsave(filename ="R2plot_par1.png", plot = g, height=45, width= 45)
+ggsave(filename ="R2plot_par1.png", plot = g, height = 45, width = 45)
 
 # PAR2 plot
 rinitial <- read.delim("snivalis.male.chr15.par2.geno.ld")
 colnames(rinitial)=c("chr","POS_A","POS_B","N_INDV","R2")
 ld <- rinitial
 g <-plotPairwiseLD(ld)
-ggsave(filename ="R2plot_par2.png", plot = g, height=45, width= 45)
+ggsave(filename ="R2plot_par2.png", plot = g, height = 45, width = 45)
 
