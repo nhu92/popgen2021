@@ -59,6 +59,8 @@ In vcftools, we have `--geno-r2`, `--hap-r2`, `--geno-r2-positions`, `--hap-r2-p
 vcftools --vcf ../../raw/snivalis.vcf --keep male.list --chr Chr15W --from-bp 4000000 --to-bp 8000000 --recode --out snivalis.male.chr15.sdr
 vcftools --vcf ../../raw/snivalis.vcf --keep male.list --chr Chr15W --from-bp 1 --to-bp 4000000 --recode --out snivalis.male.chr15.par1
 vcftools --vcf ../../raw/snivalis.vcf --keep male.list --chr Chr15W --from-bp 8000000 --to-bp 15651726 --recode --out snivalis.male.chr15.par2
+
+# Since the reference genome for three data sets is the same, the total length of Chr15W in our data sets should be the same here.
 ```
 The reason we generate subsets of our VCF files is that we will use these files multiple times.
 
