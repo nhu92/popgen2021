@@ -83,7 +83,7 @@ R
 ```
 Then you will enter a R session to type or copy your code.
 
-The code for generating plot for r<sup>2</sup> is here.
+The code for generating plot for r<sup>2</sup> is [here](https://github.com/gudusanjiao/popgen2021/blob/main/R2_plot.R).
 
 ## Calculate LD decay using 'ngsLD'
 
