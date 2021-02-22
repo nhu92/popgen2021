@@ -43,7 +43,8 @@ vcftools --vcf snivalis.vcf --remove nogender.list --recode --out snivalis.clean
 
 For this exercise and later ones in this semester, we will use these command very often. For more usages and more fancy filters, you could visit [VCF manual](http://vcftools.sourceforge.net/man_latest.html).
 ## Calculating r<sup>2</sup> using 'vcftools'
+In vcftools, we have `--geno-r2`, `--hap-r2`, `--geno-r2-positions`, `--hap-r2-positions` options to calculate r<sup>2</sup> in different situations. If our data are phased (means we know which alleles are in the same haplotype), we can calculate haplotype r<sup>2</sup>. For our data, since we sequenced with sequence capture technique, the genotype calling is less phased. Currently, we could only use `--geno-r2` or `--geno-r2-positions` to calculate r<sup>2</sup>.
 
 
-## Claculate LD decay using 'ngsLD'
+## Calculate LD decay using 'ngsLD'
 
