@@ -3,7 +3,7 @@ Nan Hu / Feb. 7, 2021
 
 ---
 
-(description)
+In this exercise, we want to practice how to calculate recombination coefficients. In order to make results interpretable, we would like to compare them across different genomic regions, different chromosomes, or different genders. To begin with, there are some basic introductions about gender information in our data sets. Also, we will learn how to subset our data sets to work on specific regions and individuals.
 
 ---
 ## Aims:
@@ -19,7 +19,12 @@ Dioecy means having males and females individuals separately. In angiosperms, on
 Knowing the gender of our data could bring some special perspectives in analyzing and interpretting results. For example, our previous diversity calculation on π and θ<sub>w</sub> could be done separately for males and females only. Major expected results will be high diversity level on female ZW due to high heterozygosities while low diversity level on male ZZ due to low effective population size ( Ne(Z) = 3/4 Ne(Autosome) ).
 
 ### How to do analysis based on part of our data
-
+In practical research, we often want to subset our data to compare or study the part we are interested. In vcftools, it is very convenient to subset our data by using `--positions`, `--from-bp`, `--to-bp`, `-chr`, `--keep`, `--remove`, `--recode` parameters.
+```bash
+# Here are some examples for using vcftools to subset our data:
+## 
+vcftools --vcf 
+```
 
 ## Calculating r<sup>2</sup> using 'vcftools'
 
