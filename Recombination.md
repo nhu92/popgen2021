@@ -87,5 +87,10 @@ R
 Then you will enter a R session to type or copy your code. The code for generating plot for r<sup>2</sup> is [here](https://github.com/gudusanjiao/popgen2021/blob/main/R2_plot.R).
 
 Try to interpret the result. How does it look like? Why there are non-recombination blocks? How does it relate to gender/sex chromosome?
+## Calculate LD decay using 'vcftools'
+See R code [LD_decay_vcftools.R](https://github.com/gudusanjiao/popgen2021/blob/main/LD_decay_vcftools.R). I adapted it from @BrianSanderson our previous post-doc.
+
+Does the decay differs from each other? You could repeat these step with female data or combine all gender together. 
+
 ## Calculate LD decay using 'ngsLD'
 
