@@ -88,9 +88,9 @@ Then you will enter a R session to type or copy your code. The code for generati
 
 Try to interpret the result. How does it look like? Why there are non-recombination blocks? How does it relate to gender/sex chromosome?
 ## Calculate LD decay using 'vcftools'
-LD decay (Fig. 4.6 in textbook) plot shows how LD decreasse when distance between loci increases. When there is linkage disequilibrium, we expect the decay will be slower than neutral. To plot LD decay curve from our data, see R code [LD_decay_vcftools.R](https://github.com/gudusanjiao/popgen2021/blob/main/LD_decay_vcftools.R). I adapted it from @BrianSanderson our previous post-doc. Basically, we fit the r<sup>2</sup> according to distance between loci to equation 4.12 in our textbook.
+LD decay (Fig. 4.6 in textbook) plot shows how LD decreasse when distance between loci increases. When there is linkage disequilibrium, we expect the decay will be slower than neutral. To plot LD decay curve from our data, see R code [LD_decay_vcftools.R](https://github.com/gudusanjiao/popgen2021/blob/main/LD_decay_vcftools.R). I adapted it from @BrianSanderson our previous post-doc. Basically, we fit the r<sup>2</sup> according to distance between loci to equation 4.12 in our textbook. The plot parameter might need to change based on different species to make it nicer.
 
 Does the decay differs from each other? You could repeat these step with female data or combine all gender together. 
 
 ## Calculate LD decay using 'ngsLD'
-
+> I could not use vcf files as input for this software. If I use .bam files it will bring inconsistancies with vcftools data due to different filtering criterion. I will find a solution to this and hopefully this method can be used in project. However, currently, I don't think we need to calculate the same thing again.
