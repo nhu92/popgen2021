@@ -12,4 +12,4 @@ Nan Hu / Feb. 25, 2021
 3. Calculating d<sub>XY</sub> between males and females
 4. Plotting Fst manhattan plots, d<sub>XY</sub> plots
 ---
-# Calculating Fst between males and females using 'vcftools'
+## Calculating Fst between males and females using 'vcftools'
