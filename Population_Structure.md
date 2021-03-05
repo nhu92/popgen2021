@@ -14,3 +14,4 @@ Nan Hu / Feb. 25, 2021
 5. Plotting Fst manhattan plots, d<sub>XY</sub> plots
 ---
 ## Calculating Fst between males and females using 'vcftools'
+Population structure focuses on comparisons among subpopulations with different isolation and migration histories. When inferring population structure, Fst is estimated as the degree of measuring Wahlund effect.
