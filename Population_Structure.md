@@ -14,7 +14,7 @@ Nan Hu / Feb. 25, 2021
 5. Plotting Fst manhattan plots, d<sub>XY</sub> plots
 ---
 ## Calculating Fst between males and females using 'vcftools'
-Population structure focuses on comparisons among subpopulations with different isolation and migration histories. When inferring population structure, Fst is an estimator as the degree of measuring Wahlund effect. In our population data, we do not really have samples of subpopulations from the same species. Instead, luckily, all of our species are dioecious which having males and females. We could treat males and females as two different subpopulations and they certainly having some different patterns in selection and lifestyle. 
+Population structure focuses on comparisons among subpopulations with different isolation and migration histories. When inferring population structure, Fst is an estimator as the degree of measuring Wahlund effect. In our population data, we do not really have samples of subpopulations from the same species. Instead, luckily, all of our species are dioecious which having males and females. We could treat males and females as two different subpopulations and they certainly having some different patterns in selection and life history. 
 ```bash
 #!/bin/bash
 #SBATCH -J fst
