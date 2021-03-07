@@ -33,7 +33,8 @@ vcftools --vcf snivalis.vcf --weir-fst-pop male.list --weir-fst-pop female.list 
 The output will have a suffix of `.weir.fst`. It contains columns of positions and Fst estimation.
 
 ## Calculating Fst between *S. nivalis* and *S. reticulata* using 'vcftools'
-
+As we described above, we do not have datasets for multiple subpopulations. However, since *S. nivalis* and *S. reticulata* are closed related species sharing lots of characters, we could try to estimate Fst between these two species to see any outliers denoting the differences in each population.
+> You could find merged VCF as well as the namelist file under `/lustre/scratch/nhu/popgen2021/script/popstruc/`.
 ```bash
 #!/bin/bash
 #SBATCH -J fst_sn_sr
@@ -43,7 +44,7 @@ The output will have a suffix of `.weir.fst`. It contains columns of positions a
 #SBATCH -N 1
 #SBATCH -n 16
 
-vcftools --vcf snivalis.vcf --weir-fst-pop male.list --weir-fst-pop female.list --out snivalis
+vcftools --vcf merged_sr_sn.vcf --weir-fst-pop SN.namelist --weir-fst-pop SR.namelist --out sr_sn
 
 ```
 
