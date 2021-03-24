@@ -1,5 +1,5 @@
 ## Direct selection
-Nan Hu, Mar. 24, 2021
+Nan Hu / Mar. 24, 2021
 
 ---
 
