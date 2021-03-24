@@ -119,4 +119,4 @@ And it will ask you about your eraider password. The file will download to your 
 This way to transferring data is quick but not recommended by HPCC since when it transferring large data, it is not quite reliable and might cause issues on login node of HPCC.
 
 ## Plotting HWE
-See [HWEplot.R](https://github.com/gudusanjiao/popgen2021/blob/main/HWEplot.R).
+See [HWEplot.R](https://github.com/gudusanjiao/popgen2021/blob/main/Rcode/HWEplot.R).
