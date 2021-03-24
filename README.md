@@ -11,8 +11,8 @@ BIOL 6301: Advanced Molecular Population Genetics
 2. [Variantion parameter calculation](https://github.com/gudusanjiao/popgen2021/blob/main/project/02_Describing_Variation.md)
 3. [Recombination in sex chromosome](https://github.com/gudusanjiao/popgen2021/blob/main/project/03_Recombination.md)
 4. [Population structure between males and females](https://github.com/gudusanjiao/popgen2021/blob/main/project/04_Population_Structure.md)
-5. [Direct selection and MK test](https://github.com/gudusanjiao/popgen2021/blob/main/project/05_Direct_selection.md)(In progress)
-6. [Linked selection and D statistics](https://github.com/gudusanjiao/popgen2021/blob/main/project/06_Linked_Selection.md)(In progress)
+5. [Direct selection and MK test](https://github.com/gudusanjiao/popgen2021/blob/main/project/05_Direct_selection.md) (In progress)
+6. [Linked selection and D statistics](https://github.com/gudusanjiao/popgen2021/blob/main/project/06_Linked_Selection.md) (In progress)
 
 **Code**
 
