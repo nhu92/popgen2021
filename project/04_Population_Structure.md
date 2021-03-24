@@ -46,11 +46,11 @@ vcftools --vcf merged_sr_sn.vcf --weir-fst-pop SN.namelist --weir-fst-pop SR.nam
 ```
 
 ## Plotting Fst plots and find the outliers
-See [R code](https://github.com/gudusanjiao/popgen2021/blob/main/R_manhattan_plot.R) of plotting. Note that, high Fst loci mean that between two populations, these positions are highly different. For example, in our male and female Fst analysis, loci have the high Fst means the loci that have the most differences between males and females. Thus, these loci are candidates of sex linked loci. After we check the association of sex determination of these loci, we could determine the boundary of sex determination region from this result.
+See [R code](https://github.com/gudusanjiao/popgen2021/blob/main/Rcode/R_manhattan_plot.R) of plotting. Note that, high Fst loci mean that between two populations, these positions are highly different. For example, in our male and female Fst analysis, loci have the high Fst means the loci that have the most differences between males and females. Thus, these loci are candidates of sex linked loci. After we check the association of sex determination of these loci, we could determine the boundary of sex determination region from this result.
 
-## Calculating d<sub>XY</sub> between males and females **(Will be done by Nan)**
+## Calculating d<sub>XY</sub> between males and females 
 ## Doing structure analysis across three species **(Will be done by Nan)**
-
+See [R function](https://github.com/gudusanjiao/popgen2021/blob/main/Rcode/dxy_function.R) to calculte pairwise d<sub>XY</sub> using `.vcf` as input.
 
 
 
