@@ -14,7 +14,7 @@ theme_set(theme_cowplot()); theme_update(plot.title = element_text(hjust = 0.5))
 # assuming SDR from 4M to 8M
 r2_frame <- bind_rows(read_delim('snivalis.male.chr15.par1.geno.ld', delim="\t",  na =c("", "NA", "-nan")) %>%
                         mutate(., Sex = "Male", Region = "PAR1"),
-                      read_delim('snivalis.male.chr15.4m_8m.geno.ld', delim="\t",  na =c("", "NA", "-nan")) %>%
+                      read_delim('snivalis.male.chr15.sdr.geno.ld', delim="\t",  na =c("", "NA", "-nan")) %>%
                         mutate(., Sex = "Male", Region = "SDR"),
                       read_delim('snivalis.male.chr15.par2.geno.ld', delim="\t",  na =c("", "NA", "-nan")) %>%
                         mutate(., Sex = "Male", Region = "PAR2"))
